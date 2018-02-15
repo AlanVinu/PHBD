@@ -1,4 +1,5 @@
-# library(doParallel)
+#CAUTION - Do not re-run lines 2-4 
+#library(doParallel)
 # no_of_cores = (detectCores()/2)
 # registerDoParallel(cores = no_of_cores)
 library(shiny)
