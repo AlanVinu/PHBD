@@ -8,10 +8,8 @@ function(input, output) {
     OriginalRecords[, 1] <- NULL
     rownames(OriginalRecords) <- c(1:nrow(OriginalRecords))
     #To find a
-    for (i in 1:nrow(OriginalRecords)) {
-      if (OriginalRecords[i, "PatientId"] == input$PatientID)
-        a = i
-    }
+    a = which(OriginalRecords[,"PatientId"] == input$PatientID)
+    
     Q <- as.matrix(OriginalRecords[a, ])
     return(Q)
   })
@@ -20,10 +18,7 @@ function(input, output) {
       read.csv("~/R/MainProjectPhase1/Personalised_Healthcare/OriginalRecords.csv")
     OriginalRecords[, 1] <- NULL
     #To find a
-    for (i in 1:nrow(OriginalRecords)) {
-      if (OriginalRecords[i, "PatientId"] == input$PatientID)
-        a = i
-    }
+    a = which(OriginalRecords[,"PatientId"] == input$PatientID)
     
     #To find Ja
     Ja <- c()
